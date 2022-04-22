@@ -5,8 +5,9 @@ class Cliente extends CI_Controller{
 
 
     public function cadastro_cliente() {
-        $this->load->view('layout/header');
-		$this->load->view('pages/cliente/cadastro_cliente');
+        $title['title'] = "Cadastrar Cliente";
+        $this->load->view('layout/header', $title);
+		$this->load->view('pages/cliente/cadastro_cliente', $title);
 		$this->load->view('layout/footer');
     }
 
@@ -14,14 +15,16 @@ class Cliente extends CI_Controller{
         $this->load->model('cliente_model');
         $clientes['cliente'] = $this->cliente_model->exibir_cliente();
         
-        $this->load->view('layout/header');
-		$this->load->view('pages/cliente/relatorio_cliente', $clientes);
+        $title['title'] = "Relatório Cliente";
+        $this->load->view('layout/header', $title);
+		$this->load->view('pages/cliente/relatorio_cliente', $clientes, $title,);
 		$this->load->view('layout/footer');
     }
 
     public function editar_cliente() {
-        $this->load->view('layout/header');
-		$this->load->view('pages/cliente/editar_cliente');
+        $title['title'] = "Editar Cliente";
+        $this->load->view('layout/header',$title);
+		$this->load->view('pages/cliente/editar_cliente',$title);
 		$this->load->view('layout/footer');
     }
 
