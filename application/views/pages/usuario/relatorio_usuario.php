@@ -23,17 +23,8 @@
                 <td><?= $item['senha'] ?></td>
 
                 <td>
-                    <div style="display: flex; justify-content: center;">
-                        <form class="form-group p-1" method="POST" action="<?= site_url('usuario/editar_usuario') ?>">
-                            <input name="id" type="text" value="" hidden>
-                            <button class="btn btn-sm btn-success">Editar</button>
-
-                        </form>
-                        <form class="form-group p-1" method="POST" action="<?= site_url('usuario/deletar/'.$item['id']) ?>">
-                            <input name="id" type="text" value="" hidden>
-                            <button class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja excluir o item selecionado?')">Excluir</button>
-                        </form>
-                    </div>
+                    <a class="btn btn-sm btn-success" href="<?= site_url('usuario/editar_usuario/'.$item['id']) ?>">Editar</a>
+                    <a onclick="return confirm('Tem certeza que deseja excluir o item selecionado?')" class="btn btn-sm btn-danger" href="<?= site_url('usuario/deletar/'.$item['id']) ?>">Excluir</a>
                 </td>
             </tr>
         <?php endforeach; ?>

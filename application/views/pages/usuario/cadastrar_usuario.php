@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 
-<h1 class="text-primary pt-3 text-center">Cadastrar Usuário</h1>
+<h1 class="text-primary pt-3 text-center"><?= $title ?></h1>
 <section class="col-md-6 offset-md-3 mt-3">
     <form method="POST" action="<?= site_url('usuario/salvar_usuario') ?>" class="form-group">
 
