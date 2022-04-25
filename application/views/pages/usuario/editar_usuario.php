@@ -2,7 +2,7 @@
 
 <h1 class="text-primary pt-3 text-center"><?= $title ?></h1>
 <section class="col-md-6 offset-md-3 mt-3">
-    <form method="POST" action="<?= site_url('usuario/alterar_usuario') ?>" class="form-group">
+    <form method="POST" action="<?= site_url('usuario/alterar_usuario/' . $mostra['id']) ?>" class="form-group">
 
         <label class="m-2 text-black">Nome Completo</label>
         <input name="nome" value="<?= $mostra['nome'] ?>" type="text" class="form-control form-control-sm nav-item mr-5" required autofocus>
@@ -16,7 +16,7 @@
         <div class="form-group">
             <label>Perfil</label>
             <select name="perfil" value="<?= $mostra['perfil'] ?>" class="form-control" required>
-                <option>Selecione</option>
+                <option></option>
                 <option value="Administrador">Administrador</option>
                 <option value="Usuário">Usuário</option>
             </select>

@@ -47,8 +47,12 @@ class Usuario extends CI_Controller
     }
 
     /* MÉTODO RESPONSÁVEL POR ALTERAR USUÁRIO */
-    public function alterar_usuario()
+    public function alterar_usuario($id)
     {
+        $this->load->model('usuario_model');
+        $usuario_alterado = $_POST;
+        $this->usuario_model->update($id, $usuario_alterado);
+        redirect('usuario/relatorio_usuario');
     }
 
     /* METODO RESPONSÁVEL EM EXCLUIR USUÁRIO */

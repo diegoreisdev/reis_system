@@ -23,8 +23,8 @@
                 <td><?= $item['senha'] ?></td>
 
                 <td>
-                    <a class="btn btn-sm btn-success" href="<?= site_url('usuario/editar_usuario/'.$item['id']) ?>">Editar</a>
-                    <a onclick="return confirm('Tem certeza que deseja excluir o item selecionado?')" class="btn btn-sm btn-danger" href="<?= site_url('usuario/deletar/'.$item['id']) ?>">Excluir</a>
+                    <a class="btn btn-sm btn-success" href="<?= site_url('usuario/editar_usuario/' . $item['id']) ?>">Editar</a>
+                    <a onclick="return confirm('Tem certeza que deseja excluir o item selecionado?')" class="btn btn-sm btn-danger" href="<?= site_url('usuario/deletar/' . $item['id']) ?>">Excluir</a>
                 </td>
             </tr>
         <?php endforeach; ?>

@@ -21,11 +21,19 @@ class Usuario_model extends CI_Model
     {
         return $this->db->get_where('usuario', ['id' => $id])->row_array();
     }
+
     /* METODO RESPONSÁVEL EM EXCLUIR*/
     public function excluir($id)
     {
         $this->db->where('id', $id);
         $this->db->delete('usuario');
         return true;
+    }
+
+    /* MÉTODO RESPONSÁVEL EM ALTERAR USUÁRIO */
+    public function update($id, $usuario_alterado)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('usuario', $usuario_alterado);
     }
 }
