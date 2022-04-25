@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 
 <section class="col-md-6 offset-md-3 mt-3">
-    <form method="POST" action="db_adicionar_usuario.php" class="form-group">
+    <form method="POST" action="<?= site_url('usuario/salvar_usuario') ?>" class="form-group">
 
         <label class="m-2 text-black">Nome Completo</label>
         <input name="nome" type="text" class="form-control form-control-sm nav-item mr-5" required autofocus>

@@ -25,13 +25,14 @@
                         <button class="btn btn-sm btn-success">Editar</button>
 
                     </form>
-                    <form class="form-group p-1" method="POST" action="">
+                    <form class="form-group p-1" method="POST" action="<?= site_url('cliente/deletar/'.$item['id']) ?>">
                         <input name="id" type="text" value="" hidden>
                         <button class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja excluir o item selecionado?')">Excluir</button>
                     </form>
                 </div>
             </td>
             </tr>
+            
         <?php endforeach; ?>
     </tbody>
 </table>

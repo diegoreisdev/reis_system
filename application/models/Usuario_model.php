@@ -4,8 +4,8 @@ class Usuario_model extends CI_Model{
     /* VALIDA LOGIN */
 
 
-    public function adicionar() {
-
+    public function adicionar($usuario) {
+        $this->db->insert("usuario", $usuario);
     }
 
     public function exibir_usuario(){
@@ -16,12 +16,12 @@ class Usuario_model extends CI_Model{
 
     }
 
-    public function excluir() {
-
+    public function excluir($id) {
+        $this->db->where('id', $id);
+        $this->db->delete('usuario');
+        return true;
     }
 
-    public function adicionar_cliente() {
-        $this->db->get('usuarios')->result_array();
-    }
+   
 
 }
