@@ -34,7 +34,11 @@ class Login extends CI_Controller
 			$this->session->set_userdata('usuario_logado', $usuario);
 			redirect('login/home');
 		} else {
-			redirect('login');
+			$title['title'] = "Login";
+			$erro['erro'] = 'Login e/ou senha inválido(s)';
+			$this->load->view('layout/header', $title);
+			$this->load->view('pages/login', $erro);
+			$this->load->view('layout/footer');
 		}
 	}
 
