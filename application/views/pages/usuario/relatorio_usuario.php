@@ -7,9 +7,11 @@
             <th>ID</th>
             <th>Nome</th>
             <th>Login</th>
-            <th>Perfil</th>
-            <th>Senha</th>
-            <th>Ações</th>
+            <?php if ($_SESSION['usuario_logado']['perfil'] != 'Usuário') : ?>
+                <th>Perfil</th>
+                <th>Senha</th>
+                <th>Ações</th>
+            <?php endif; ?>
         </tr>
     </thead>
 
@@ -19,13 +21,14 @@
                 <td><?= $item['id'] ?></td>
                 <td><?= $item['nome'] ?></td>
                 <td><?= $item['login'] ?></td>
-                <td><?= $item['perfil'] ?></td>
-                <td><?= $item['senha'] ?></td>
-
-                <td>
-                    <a class="btn btn-sm btn-success" href="<?= site_url('usuario/editar_usuario/' . $item['id']) ?>">Editar</a>
-                    <a onclick="return confirm('Tem certeza que deseja excluir o item selecionado?')" class="btn btn-sm btn-danger" href="<?= site_url('usuario/deletar/' . $item['id']) ?>">Excluir</a>
-                </td>
+                <?php if ($_SESSION['usuario_logado']['perfil'] != 'Usuário') : ?>
+                    <td><?= $item['perfil'] ?></td>
+                    <td><?= $item['senha'] ?></td>
+                    <td>
+                        <a class="btn btn-sm btn-success" href="<?= site_url('usuario/editar_usuario/' . $item['id']) ?>">Editar</a>
+                        <a onclick="return confirm('Tem certeza que deseja excluir o item selecionado?')" class="btn btn-sm btn-danger" href="<?= site_url('usuario/deletar/' . $item['id']) ?>">Excluir</a>
+                    </td>
+                <?php endif; ?>
             </tr>
         <?php endforeach; ?>
     </tbody>

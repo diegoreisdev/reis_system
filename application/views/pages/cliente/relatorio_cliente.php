@@ -8,7 +8,9 @@
             <th>ID</th>
             <th>Nome</th>
             <th>Categoria</th>
-            <th>Ações</th>
+            <?php if ($_SESSION['usuario_logado']['perfil'] != 'Usuário') : ?>
+                <th>Ações</th>
+            <?php endif; ?>
         </tr>
     </thead>
 
@@ -18,10 +20,12 @@
                 <td><?= $item['id'] ?></td>
                 <td><?= $item['nomeCliente'] ?></td>
                 <td><?= $item['categoria'] ?></td>
-                <td>
-                    <a class="btn btn-sm btn-success" href="<?= site_url('cliente/editar_cliente/'.$item['id']) ?>">Editar</a>
-                    <a onclick="return confirm('Tem certeza que deseja excluir o item selecionado?')" class="btn btn-sm btn-danger" href="<?= site_url('cliente/deletar/'.$item['id']) ?>">Excluir</a>
-                </td>
+                <?php if ($_SESSION['usuario_logado']['perfil'] != 'Usuário') : ?>
+                    <td>
+                        <a class="btn btn-sm btn-success" href="<?= site_url('cliente/editar_cliente/' . $item['id']) ?>">Editar</a>
+                        <a onclick="return confirm('Tem certeza que deseja excluir o item selecionado?')" class="btn btn-sm btn-danger" href="<?= site_url('cliente/deletar/' . $item['id']) ?>">Excluir</a>
+                    </td>
+                <?php endif; ?>
             </tr>
 
         <?php endforeach; ?>

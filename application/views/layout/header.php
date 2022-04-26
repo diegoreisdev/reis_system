@@ -25,15 +25,16 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="<?= site_url('login/home') ?>">Home</a>
                     </li>
+                    <?php if (@$_SESSION['usuario_logado']['perfil'] != 'Usuário') : ?>
+                        <li class="nav-item">
+                            <a href="" class="nav-link dropdown-toggle text-light" data-toggle="dropdown">Cadastrar</a>
 
-                    <li class="nav-item">
-                        <a href="" class="nav-link dropdown-toggle text-light" data-toggle="dropdown">Cadastrar</a>
-
-                        <div class="dropdown-menu">
-                            <a href="<?= site_url('usuario/cadastro_usuario') ?>" class="dropdown-item">Usuário</a>
-                            <a href="<?= site_url('cliente/cadastro_cliente') ?>" class="dropdown-item">Cliente</a>
-                        </div>
-                    </li>
+                            <div class="dropdown-menu">
+                                <a href="<?= site_url('usuario/cadastro_usuario') ?>" class="dropdown-item">Usuário</a>
+                                <a href="<?= site_url('cliente/cadastro_cliente') ?>" class="dropdown-item">Cliente</a>
+                            </div>
+                        </li>
+                    <?php endif; ?>
 
                     <li class="nav-item dropdown">
                         <a href="" class="nav-link dropdown-toggle text-light" data-toggle="dropdown">Relatório</a>
@@ -46,7 +47,7 @@
             </div>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="logoff.php">SAIR</a>
+                    <a class="nav-link" href="<?= site_url('login/sair') ?>">SAIR</a>
                 </li>
             </ul>
         </nav>
