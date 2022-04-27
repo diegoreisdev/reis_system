@@ -45,6 +45,10 @@
                     </li>
                 </ul>
             </div>
+            <?php if (!empty($_SESSION['usuario_logado']['nome'])) : ?>
+                <div class="mx-2 p-1 text-light "> <?= $_SESSION['usuario_logado']['nome']; ?> </div>
+            <?php endif; ?>
+            
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="<?= site_url('login/sair') ?>">SAIR</a>
