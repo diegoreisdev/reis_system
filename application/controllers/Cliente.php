@@ -23,7 +23,10 @@ class Cliente extends CI_Controller
     /* MÉTODO RESPONSÁVEL PELA ADIÇÃO DE CLIENTE */
     public function salvar_cliente()
     {
-        $cliente_novo = $_POST;
+        $cliente_novo = [
+            "nomeCliente" => $this->input->post('nomeCliente'),
+            "categoria" => $this->input->post('categoria')
+        ];
         $this->cliente_model->salvar_cliente($cliente_novo);
         redirect('cliente/relatorio_cliente');
     }
@@ -52,7 +55,10 @@ class Cliente extends CI_Controller
     /* MÉTODO RESPONSÁVEL POR ALTERAR O CLIENTE */
     public function alterar_cliente($id)
     {
-        $cliente_alterado = $_POST;
+        $cliente_alterado = [
+            "nomeCliente" => $this->input->post('nomeCliente'),
+            "categoria"   => $this->input->post('categoria')
+        ];
         $this->cliente_model->update($id, $cliente_alterado);
         redirect('cliente/relatorio_cliente');
     }
@@ -61,6 +67,7 @@ class Cliente extends CI_Controller
     public function deletar($id)
     {
         $this->cliente_model->excluir($id);
-        redirect('cliente/relatorio_cliente');
+        $aviso = ["aviso" => $this->session->set_flashdata('excluido', 'Cliente excluído com sucesso')];
+        redirect('cliente/relatorio_cliente', $aviso);
     }
 }

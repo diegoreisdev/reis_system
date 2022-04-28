@@ -8,8 +8,8 @@ class Login extends CI_Controller
 	{
 		$title['title'] = "Login";
 		$this->load->view('layout/header', $title);
-		$this->load->view('pages/login', $title);
-		$this->load->view('layout/footer', $title);
+		$this->load->view('pages/login');
+		$this->load->view('layout/footer');
 	}
 
 	/* MÉTODO RESPONSÁVEL POR CARREGAR A VIEW HOME */
@@ -18,16 +18,16 @@ class Login extends CI_Controller
 		permissao();
 		$title['title'] = "Home";
 		$this->load->view('layout/header', $title);
-		$this->load->view('pages/home', $title);
-		$this->load->view('layout/footer', $title);
+		$this->load->view('pages/home');
+		$this->load->view('layout/footer');
 	}
 
 	/* MÉTODO RESPONSÁVEL POR CHAMAR A VALIDAÇÃO DO USUÁRIO */
 	public function validar()
 	{
 		$this->load->model('login_model');
-		$login = $_POST['login'];
-		$senha = $_POST['senha'];
+		$login   = $_POST['login'];
+		$senha   = $_POST['senha'];
 		$usuario = $this->login_model->validar($login, $senha);
 
 		if ($usuario) {
@@ -35,7 +35,7 @@ class Login extends CI_Controller
 			redirect('login/home');
 		} else {
 			$title['title'] = "Login";
-			$erro['erro'] = 'Login e/ou senha inválido(s)';
+			$erro['erro']   = 'Login e/ou senha inválido(s)';
 			$this->load->view('layout/header', $title);
 			$this->load->view('pages/login', $erro);
 			$this->load->view('layout/footer');
