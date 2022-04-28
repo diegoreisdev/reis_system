@@ -1,7 +1,22 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 
-<h1 class="text-primary pt-3 text-center ">Relatório de Usuários</h1>
+<h1 class="text-primary pt-3 text-center "><?= $title ?></h1>
 <table class="table table-striped text-center" ml-3>
+    <!-- ALERTA DE NOVO USUÁRIO -->
+    <?php if ($this->session->flashdata("novo")) : ?>
+        <p class="alert alert-success text-center container" role="alert"> <?= $this->session->flashdata("novo") ?></p>
+    <?php endif; ?>
+
+    <!-- ALERTA DE USUÁRIO EDITADO -->
+    <?php if ($this->session->flashdata("editado")) : ?>
+        <p class="alert alert-success text-center container" role="alert"> <?= $this->session->flashdata("editado") ?></p>
+    <?php endif; ?>
+
+    <!-- ALERTA DE USUÁRIO EXCLUIDO -->
+    <?php if ($this->session->flashdata("excluido")) : ?>
+        <p class="alert alert-danger text-center container" role="alert"> <?= $this->session->flashdata("excluido") ?></p>
+    <?php endif; ?>
+
     <thead class="thead-light">
         <tr>
             <th>ID</th>

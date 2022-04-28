@@ -2,7 +2,8 @@
 
 class Login_model extends CI_Model
 {
-    /* MÉTODO RESPONSÁVEL VALIDAR USUÁRIO */
+    /* MÉTODO RESPONSÁVEL VALIDAR USUÁRIO
+    ********************************************************/
     public function validar($login, $senha)
     {
         $this->db->where('login', $login);

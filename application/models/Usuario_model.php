@@ -2,27 +2,29 @@
 
 class Usuario_model extends CI_Model
 {
-    /* VALIDA LOGIN */
-
-    /* METODO RESPONSÁVEL EM INSERIR*/
+    /* METODO RESPONSÁVEL EM INSERIR
+    ********************************************************/
     public function adicionar($usuario)
     {
         $this->db->insert("usuario", $usuario);
     }
 
-    /* METODO RESPONSÁVEL EM BUSCAR*/
+    /* METODO RESPONSÁVEL EM BUSCAR
+    ********************************************************/
     public function exibir_usuario()
     {
         return $this->db->get('usuario')->result_array();
     }
 
-    /* MÉTODO RESPONSÁVEL EM EXIBIR DADOS NA VIEW DE EDIÇÃO */
+    /* MÉTODO RESPONSÁVEL EM EXIBIR DADOS NA VIEW DE EDIÇÃO
+    ********************************************************/
     public function mostrar($id)
     {
         return $this->db->get_where('usuario', ['id' => $id])->row_array();
     }
 
-    /* METODO RESPONSÁVEL EM EXCLUIR*/
+    /* METODO RESPONSÁVEL EM EXCLUIR
+    ********************************************************/
     public function excluir($id)
     {
         $this->db->where('id', $id);
@@ -30,7 +32,8 @@ class Usuario_model extends CI_Model
         return true;
     }
 
-    /* MÉTODO RESPONSÁVEL EM ALTERAR USUÁRIO */
+    /* MÉTODO RESPONSÁVEL EM ALTERAR USUÁRIO
+    ********************************************************/
     public function update($id, $usuario_alterado)
     {
         $this->db->where('id', $id);

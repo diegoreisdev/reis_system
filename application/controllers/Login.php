@@ -3,7 +3,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Login extends CI_Controller
 {
-	/* MÉTODO RESPONSÁVEL POR CARREGAR A VIEW LOGIN */
+	/*
+	 MÉTODO RESPONSÁVEL POR CARREGAR A VIEW LOGIN
+	********************************************************/
 	public function index()
 	{
 		$title['title'] = "Login";
@@ -12,7 +14,8 @@ class Login extends CI_Controller
 		$this->load->view('layout/footer');
 	}
 
-	/* MÉTODO RESPONSÁVEL POR CARREGAR A VIEW HOME */
+	/* MÉTODO RESPONSÁVEL POR CARREGAR A VIEW HOME
+	********************************************************/
 	public function home()
 	{
 		permissao();
@@ -22,7 +25,8 @@ class Login extends CI_Controller
 		$this->load->view('layout/footer');
 	}
 
-	/* MÉTODO RESPONSÁVEL POR CHAMAR A VALIDAÇÃO DO USUÁRIO */
+	/* MÉTODO RESPONSÁVEL POR CHAMAR A VALIDAÇÃO DO USUÁRIO
+	********************************************************/
 	public function validar()
 	{
 		$this->load->model('login_model');
@@ -41,8 +45,9 @@ class Login extends CI_Controller
 			$this->load->view('layout/footer');
 		}
 	}
-
-	/* MÉTODO RESPONSÁVEL EM DESLOGAR USUÁRIO */
+	
+	/* MÉTODO RESPONSÁVEL EM DESLOGAR USUÁRIO
+	********************************************************/
 	public function sair()
 	{
 		$this->session->unset_userdata('usuario_logado');
