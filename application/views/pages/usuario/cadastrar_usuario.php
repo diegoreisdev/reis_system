@@ -13,17 +13,17 @@
             <p class="text-danger py-1"><?= $erro ?></p>
         <?php endif; ?>
         <label class="m-2 text-black">Nome Completo</label>
-        <input name="nome" type="text" class="form-control form-control-sm nav-item mr-5" autofocus>
+        <input name="nome" type="text" class="form-control form-control-sm nav-item mr-5" autofocus required>
 
         <label class="m-2 text-black">Login</label>
-        <input name="login" type="email" class="form-control form-control-sm nav-item mr-5">
+        <input name="login" type="email" class="form-control form-control-sm nav-item mr-5" required>
 
         <label class="m-2 text-black">Senha</label>
-        <input name="senha" type="password" class="form-control form-control-sm nav-item mr-5">
+        <input name="senha" type="password" class="form-control form-control-sm nav-item mr-5" required>
 
         <div class="form-group">
             <label>Perfil</label>
-            <select name="perfil" class="form-control">
+            <select name="perfil" class="form-control" required>
                 <option></option>
                 <option value="Administrador">Administrador</option>
                 <option value="Usuário">Usuário</option>
