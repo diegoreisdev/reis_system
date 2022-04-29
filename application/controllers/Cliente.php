@@ -26,7 +26,7 @@ class Cliente extends CI_Controller
     ********************************************************/
     public function salvar_cliente()
     {
-        $this->form_validation->set_rules("nomeCliente", "Nome", "required|trim");
+        $this->form_validation->set_rules("nomeCliente", "Nome", "required|trim|min_length[5]|max_length[20]");
         $this->form_validation->set_rules("categoria", "Categoria", "required");
 
         if ($this->form_validation->run() == FALSE) {

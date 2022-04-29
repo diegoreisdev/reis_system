@@ -48,8 +48,8 @@ class Usuario extends CI_Controller
     ********************************************************/
     public function salvar_usuario()
     {
-        $this->form_validation->set_rules('nome', 'Nome', 'required|trim');
-        $this->form_validation->set_rules('login', 'Login', 'required|trim');
+        $this->form_validation->set_rules('nome', 'Nome', 'required|trim|min_length[5]|max_length[20]');
+        $this->form_validation->set_rules('login', 'Login', 'required|trim|valid_email');
         $this->form_validation->set_rules('senha', 'Senha', 'required|trim');
         $this->form_validation->set_rules('perfil', 'Perfil', 'required');
 
@@ -73,7 +73,7 @@ class Usuario extends CI_Controller
     ********************************************************/
     public function alterar_usuario($id)
     {
-        $this->form_validation->set_rules('nome', 'Nome', 'required|trim|max_lenght[30]');
+        $this->form_validation->set_rules('nome', 'Nome', 'required|trim|min_length[5]|max_length[20]');
         $this->form_validation->set_rules('login', 'Login', 'required|trim|valid_email');
         $this->form_validation->set_rules('senha', 'Senha', 'required|trim');
         $this->form_validation->set_rules('perfil', 'Perfil', 'required');

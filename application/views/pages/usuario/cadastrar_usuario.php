@@ -9,9 +9,6 @@
     <?php endif; ?>
 
     <form method="POST" action="<?= site_url('usuario/salvar_usuario') ?>" class="form-group">
-        <?php if (!empty($erro)) : ?>
-            <p class="text-danger py-1"><?= $erro ?></p>
-        <?php endif; ?>
         <label class="m-2 text-black">Nome Completo</label>
         <input name="nome" type="text" class="form-control form-control-sm nav-item mr-5" autofocus required>
 

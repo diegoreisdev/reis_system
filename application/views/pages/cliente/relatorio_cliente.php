@@ -22,7 +22,7 @@
             <th>ID</th>
             <th>Nome</th>
             <th>Categoria</th>
-            <?php if ($_SESSION['usuario_logado']['perfil'] != 'Usuário') : ?>
+            <?php if ($_SESSION['usuario_logado']['perfil'] != 'Usuário' && $_SESSION['usuario_logado']['perfil'] = 'Administrador') : ?>
                 <th>Ações</th>
             <?php endif; ?>
         </tr>
