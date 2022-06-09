@@ -25,7 +25,7 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="<?= site_url('login/home') ?>">Home</a>
                     </li>
-                    <?php if (@$_SESSION['usuario_logado']['perfil'] != 'Usuário' && $_SESSION['usuario_logado']['perfil'] = 'Administrador' ) : ?>
+                    <?php if (@$_SESSION['usuario_logado']['perfil'] != 'Usuário' || $_SESSION['usuario_logado']['perfil'] = 'Administrador' ) : ?>
                         <li class="nav-item">
                             <a href="" class="nav-link dropdown-toggle text-light" data-toggle="dropdown">Cadastrar</a>
 
