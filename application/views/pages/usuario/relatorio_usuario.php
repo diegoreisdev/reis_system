@@ -22,7 +22,7 @@
             <th>ID</th>
             <th>Nome</th>
             <th>Login</th>
-            <?php if ($_SESSION['usuario_logado']['perfil'] != 'Usuário' && $_SESSION['usuario_logado']['perfil'] = 'Administrador') : ?>
+            <?php if ($_SESSION['usuario_logado']['perfil'] != 'Usuário' || $_SESSION['usuario_logado']['perfil'] = 'Administrador') : ?>
                 <th>Perfil</th>
                 <th>Senha</th>
                 <th>Ações</th>
@@ -36,7 +36,7 @@
                 <td><?= $item['id'] ?></td>
                 <td><?= $item['nome'] ?></td>
                 <td><?= $item['login'] ?></td>
-                <?php if ($_SESSION['usuario_logado']['perfil'] != 'Usuário') : ?>
+                <?php if ($_SESSION['usuario_logado']['perfil'] != 'Usuário' || $_SESSION['usuario_logado']['perfil'] = 'Administrador') : ?>
                     <td><?= $item['perfil'] ?></td>
                     <td><?= $item['senha'] ?></td>
                     <td>
