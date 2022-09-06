@@ -10,7 +10,7 @@ Nessa aplicação foi utilizado HTML5, CSS3, Javascript, Boostrap, PHP, CodeIgni
 Informações base_dados
 *******************
 
-TABELA: usuario-> id | nome | login | perfil (Administrador/Usuário) | senha ---------
+TABELA: usuario-> id | nome | login | perfil (Administrador/Usuário) | senha 
 TABELA: cliente-> id | nomeCliente | categoria
 
 
